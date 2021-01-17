@@ -12,7 +12,7 @@ function UserDetails({ users }) {
       <Link to="/">
         <p>Go Back</p>
       </Link>
-      <Card className="user-details">
+      <Card className="user-details" key={users.id}>
         {users
           .filter((user) => user.id === ids)
           .map((user) => (

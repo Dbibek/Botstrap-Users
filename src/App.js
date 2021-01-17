@@ -2,7 +2,6 @@ import { Route, BrowserRouter as Router } from "react-router-dom";
 import UserCard from "./components/UserCard";
 import "./App.css";
 import useFetchdata from "./Hooks/useFetchdata";
-import { Container } from "react-bootstrap";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import UserDetails from "./components/UserDetails";
