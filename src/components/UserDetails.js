@@ -16,7 +16,11 @@ function UserDetails({ users }) {
         {users
           .filter((user) => user.id === ids)
           .map((user) => (
-            <Card.Body className="mt-10" style={{ alignItems: "center" }}>
+            <Card.Body
+              key={user.id}
+              className="mt-10"
+              style={{ alignItems: "center" }}
+            >
               <Card.Title>- name: {user.name}</Card.Title>
               <Card.Title>- username: {user.username}</Card.Title>
               <Card.Title>- email: {user.email}</Card.Title>
