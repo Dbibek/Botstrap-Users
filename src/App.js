@@ -6,20 +6,25 @@ import { Container } from "react-bootstrap";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import UserDetails from "./components/UserDetails";
+import ErrorCard from "./components/Error";
 
 function App() {
-  const { users } = useFetchdata([]);
+  const { users, error } = useFetchdata();
 
   return (
     <Router>
-      <div className="container">
-        <Route exact path="/">
-          <UserCard users={users} />
-        </Route>
-        <Route path="/users/:id">
-          <UserDetails users={users} />
-        </Route>
-      </div>
+      {error ? (
+        <ErrorCard error={error} />
+      ) : (
+        <div className="container">
+          <Route exact path="/">
+            <UserCard users={users} />
+          </Route>
+          <Route path="/users/:id">
+            <UserDetails users={users} />
+          </Route>
+        </div>
+      )}
     </Router>
   );
 }
